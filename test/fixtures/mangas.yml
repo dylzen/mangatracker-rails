@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  pub_vols: 1
+  own_vols: 1
+  mis_vols: 1
+  status: MyString
+  collection: MyString
+
+two:
+  title: MyString
+  pub_vols: 1
+  own_vols: 1
+  mis_vols: 1
+  status: MyString
+  collection: MyString

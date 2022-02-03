@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-dark table-striped table-hover table-sm align-middle">
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th>title</th>
+        <th>published</th>
+        <th>owned</th>
+        <th>missing</th>
+        <th>italy status</th>
+        <th>collection status</th>
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <% @mangas.each do |manga| %>
+          <tr class="text-center">
+            <td> <%= manga.title %> </td>
+            <td> <%= manga.pub_vols %> </td>
+            <td> <%= manga.own_vols %> </td>
+            <td> <%= manga.mis_vols %> </td>
+            <td> <%= manga.status %> </td>
+            <td> <%= manga.collection %> </td>
+            <td> <%= link_to "view", manga, class:"btn btn-dark btn-sm" %>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+</div>

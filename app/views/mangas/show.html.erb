@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <%= render @manga %>
+</div>
+  
+
+<div>
+  <%= link_to "modifica manga", edit_manga_path(@manga), class:'btn btn-dark' %>
+  <%= link_to "indietro", mangas_path, class:'btn btn-dark'  %>
+  <br/>
+  <br/>
+  <div class="actions">
+    <%= button_to "elimina manga", @manga, method: :delete, class:'btn btn-dark' %>
+  </div>
+</div>
