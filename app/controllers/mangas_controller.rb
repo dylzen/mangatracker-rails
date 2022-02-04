@@ -8,6 +8,9 @@ class MangasController < ApplicationController
 
   # GET /mangas/1 or /mangas/1.json
   def show
+    @owned_vols = @manga.volumes.collect { |v| v.number }
+    @published_array = (1..@manga.pub_vols).to_a
+    @missing_volumes = @published_array - @owned_vols
   end
 
   # GET /mangas/new

@@ -1,8 +1,20 @@
 <div class="container-fluid">
-  <%= render @manga %>
+  <br/>
+  title: <%= @manga.title %>
+  <br/>
+  volumes published: <%= @manga.pub_vols %> 
+  <br/>
+  volumes owned: <%= (@owned_vols.sort).join(', ') %>
+  <br/>
+  volumes missing: <%= (@missing_volumes.sort).join(', ') %> 
+  <br/>
+  italy status: <%= @manga.status %>
+  <br/>
+  collection status: <%= @manga.collection %>
+  <br/>
+  <br/>
 </div>
   
-
 <div>
   <%= link_to "modifica manga", edit_manga_path(@manga), class:'btn btn-dark' %>
   <%= link_to "indietro", mangas_path, class:'btn btn-dark'  %>

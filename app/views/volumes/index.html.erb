@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Volumes</h1>
+<div class="container">
+<h1>all volumes</h1>
 
 <div id="volumes">
   <% @volumes.each do |volume| %>
-    <%= render volume %>
+    <%= volume.manga.title if volume.manga.present? %> vol. 
+    <%= volume.number %>
+    <%= volume.rel_date %>
+    <%= volume.price %>
     <p>
-      <%= link_to "Show this volume", volume %>
+      <%= link_to "Show this volume", volume, class: "btn btn-dark btn-sm" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New volume", new_volume_path %>
+<%= link_to "New volume", new_volume_path, class: "btn btn-dark" %>
+</div>

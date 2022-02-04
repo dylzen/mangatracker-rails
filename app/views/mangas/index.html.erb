@@ -3,7 +3,7 @@
     <thead class="thead-dark">
       <tr class="text-center">
         <th>title</th>
-        <th>published</th>
+        <th>released</th>
         <th>owned</th>
         <th>missing</th>
         <th>italy status</th>
@@ -17,8 +17,8 @@
           <tr class="text-center">
             <td> <%= manga.title %> </td>
             <td> <%= manga.pub_vols %> </td>
-            <td> <%= manga.own_vols %> </td>
-            <td> <%= manga.mis_vols %> </td>
+            <td> <%= (manga.volumes.collect { |v| v.number }).sort.join(', ') %> </td>
+            <td> <%= ( ((1..manga.pub_vols).to_a) - (manga.volumes.collect { |v| v.number } )).sort.join(', ') %> </td>
             <td> <%= manga.status %> </td>
             <td> <%= manga.collection %> </td>
             <td> <%= link_to "view", manga, class:"btn btn-dark btn-sm" %>
@@ -26,4 +26,5 @@
         <% end %>
       </tbody>
   </table>
+  <%= @owned_vols %>
 </div>

@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @volume %>
-
+<br/>
+<div class="container">
+<%= @volume.manga.title %> vol. 
+<%= @volume.number %>
+<%= @volume.rel_date %>
+<%= @volume.price %>
+<br/>
+<br/>
 <div>
   <%= link_to "Edit this volume", edit_volume_path(@volume) %> |
   <%= link_to "Back to volumes", volumes_path %>
-
+  <br/><br/>
   <%= button_to "Destroy this volume", @volume, method: :delete %>
+</div>
 </div>
