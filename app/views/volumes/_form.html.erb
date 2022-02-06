@@ -10,21 +10,14 @@
     </div>
   <% end %>
   <br/>
-  <div class="container">
+  <div class="container justify-content-center" style="width:25%; display:grid">
     <div class="mb-3">
-      <td>
-        <%= form.label :manga_id, class:"form-label" %>
-        <%= form.select :manga_id, Manga.all.collect {|u| [u.title, u.id]}, {}, class: "select" %>
-      </td>
-      <br/>
-      <br/>
-      <td>
-        <%= form.label :number, class:"form-label" %>
-        <%= form.number_field :number, :size => 3 %>
-      </td>
+      <td><%= form.select :manga_id, Manga.all.sort.collect {|u| [u.title, u.id]}, {}, class: "form-select" %></td>
     </div>
-    <div class="container">
-      <%= form.submit "Add volume" , class:'btn btn-dark' %>
+    <div class="mb-3 justify-content-center">
+      <td><%= form.number_field :number, class:"form-select", placeholder:"volume number" %></td>
     </div>
-  </div>
-<% end %>
+    <div class="mb-3 justify-content-center" style="display:grid">
+      <%= form.submit "new volume" , class:'btn btn-dark' %>
+    </div>
+  <% end %>

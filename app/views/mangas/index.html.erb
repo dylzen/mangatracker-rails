@@ -1,13 +1,14 @@
+
 <div class="table-responsive">
-  <table class="table table-dark table-striped table-hover table-sm align-middle">
+  <table class="table table-light table-striped table-hover align-middle">
     <thead class="thead-dark">
       <tr class="text-center">
         <th>title</th>
         <th>released</th>
         <th>owned</th>
         <th>missing</th>
-        <th>italy status</th>
-        <th>collection status</th>
+        <th>status</th>
+        <th>collection</th>
         <th colspan="2"></th>
       </tr>
       </thead>
@@ -15,7 +16,7 @@
       <tbody>
         <% @mangas.each do |manga| %>
           <tr class="text-center">
-            <td> <%= manga.title %> </td>
+            <td style="width:20%"> <%= manga.title %> </td>
             <td> <%= manga.pub_vols %> </td>
             <td> <%= (manga.volumes.collect { |v| v.number }).sort.join(', ') %> </td>
             <td> <%= ( ((1..manga.pub_vols).to_a) - (manga.volumes.collect { |v| v.number } )).sort.join(', ') %> </td>
