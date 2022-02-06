@@ -4,6 +4,7 @@ class MangasController < ApplicationController
   # GET /mangas or /mangas.json
   def index
     @mangas = Manga.all
+    @mangas = Manga.order(:title)
   end
 
   # GET /mangas/1 or /mangas/1.json
@@ -11,11 +12,13 @@ class MangasController < ApplicationController
     @owned_vols = @manga.volumes.collect { |v| v.number }
     @published_array = (1..@manga.pub_vols).to_a
     @missing_volumes = @published_array - @owned_vols
+    
   end
 
   # GET /mangas/new
   def new
     @manga = Manga.new
+    italy_status = ["ongoing", "paused"]
   end
 
   # GET /mangas/1/edit

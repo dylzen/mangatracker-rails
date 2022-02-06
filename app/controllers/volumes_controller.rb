@@ -13,6 +13,7 @@ class VolumesController < ApplicationController
   # GET /volumes/new
   def new
     @volume = Volume.new
+    @mangas = Manga.all.collect
   end
 
   # GET /volumes/1/edit
