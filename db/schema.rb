@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_163836) do
+ActiveRecord::Schema.define(version: 2022_02_06_152841) do
 
   create_table "mangas", force: :cascade do |t|
     t.string "title"
     t.integer "pub_vols"
-    t.integer "own_vols"
-    t.integer "mis_vols"
     t.string "status"
     t.string "collection"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "releases", force: :cascade do |t|
+    t.integer "date"
+    t.string "month"
+    t.string "day"
+    t.string "link"
+    t.string "picture"
+    t.string "editor"
+    t.string "title"
+    t.string "book"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
