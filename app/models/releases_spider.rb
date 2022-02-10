@@ -23,10 +23,9 @@ class ReleasesSpider < Kimurai::Base
             item[:day] = release.css("div[@class='day']")&.text&.squish
             # item_previous = { :data => item }
             item_previous = item.dup
-            puts "ITEM PREVIOUS FIRST"
-            puts item_previous
             next if item[:day] == "sabato" or item[:day] == "domenica"
             item[:title] = release.css("div[class='titoli'] h5")&.text&.squish
+            ### Add manga titles to a list to only fetches those titles instead of all releases ###
             # next if item[:title] != "Jujutsu Kaisen - Sorcery Fight"
             item[:book] = release.css("div[class='titoli'] h3")&.text&.squish
             next if item[:book] == "" and item[:date] == ""
@@ -39,8 +38,6 @@ class ReleasesSpider < Kimurai::Base
             else
                 Release.where(item).first_or_create
             end
-            puts "ITEM PREVIOUS LAST"
-            puts item_previous
         end
     end
 end
