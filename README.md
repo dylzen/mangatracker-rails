@@ -5,7 +5,7 @@ WARNING: this script is a work in progress and it's just for reference.
 ## Description
 
 This is a simple application I wrote for myself to try and learn a bit of Ruby on Rails. 
-It allows to track manga/books collection. The user interface is very basic and it can only be used to add a new manga or a new volume for a manga.
+It allows to track manga/books collection. The user interface is very basic and it can only be used to add a new manga or a new volume for a manga. The app also uses Kimurai for web scraping.
 
 The database consists of three Models: Manga, Volume and Release, with Volume belonging to Manga.
 When I add a new Volume, the database and the GUI are updated to show the new correct missing volume list for that manga.
@@ -28,10 +28,20 @@ rails server
 
 The application is missing the config/database.yml and is not designed to be downloaded ad installed by other users.
 
+## Example pictures
+
+![mangatracker1](https://user-images.githubusercontent.com/29499866/153462655-874efe83-8a44-4daf-9537-b399f0fcc318.png)
+
+![mangatracker2](https://user-images.githubusercontent.com/29499866/153462870-ceb7f72a-9f21-48a9-a672-4e7582904cd6.png)
+
+![mangatacker3](https://user-images.githubusercontent.com/29499866/153462918-94fa4601-7cc0-4e1d-8458-ab984d13c8e5.png)
+
+![mangatracker4](https://user-images.githubusercontent.com/29499866/153462950-249efd41-4abc-48d6-8688-a3ca41fc0d33.png)
+
 ## Technical details
 
-ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-linux-gnu]
-Rails 7.0.1
+ruby 2.7.4p191 (2021-07-07 revision a21a3b7d23) [x86_64-linux-gnu]\
+Rails 7.0.1\
 sqlite3
 
 ## Authors
