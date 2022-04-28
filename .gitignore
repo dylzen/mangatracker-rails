@@ -35,3 +35,5 @@
 /config/master.key
 config.env
 /config/database.yml
+Gemfile
+Gemfile.lock
